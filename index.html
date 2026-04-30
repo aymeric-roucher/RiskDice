@@ -452,9 +452,11 @@
   }
 
   function executerRound(pAtt, pDef, dAtt, dDef) {
-    const att = lancerDes(dAtt);
-    const def = lancerDes(dDef);
-    const nb = Math.min(dAtt, dDef);
+    const nDesAtt = Math.min(dAtt, pAtt);
+    const nDesDef = Math.min(dDef, pDef);
+    const att = lancerDes(nDesAtt);
+    const def = lancerDes(nDesDef);
+    const nb = Math.min(nDesAtt, nDesDef);
     let perteAtt = 0, perteDef = 0;
     for (let i = 0; i < nb; i++) {
       if (att[i] > def[i]) perteDef++;
